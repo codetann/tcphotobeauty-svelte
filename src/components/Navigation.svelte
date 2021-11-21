@@ -9,15 +9,15 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
-	import { browser } from '$app/env';
-	import { slide } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
+	import { slide } from 'svelte/transition';
+	import { browser } from '$app/env';
+	import { onMount } from 'svelte';
 
 	// state
-	let width;
-	let isOpen;
 	let route = '/';
+	let isOpen;
+	let width;
 
 	// tracks the width and sets width state
 	onMount(() => {
@@ -49,7 +49,11 @@
 {#if width < 800}
 	<div class="mobile">
 		<div class="title-container">
-			<span class="title-mobile"> T & C </span>
+			<span class="title-mobile">
+				<h1 class="text-3xl">T</h1>
+				<p class="text-sm">&</p>
+				<h1 class="text-3xl">C</h1></span
+			>
 		</div>
 		<div class="flex-none">
 			<button class="button" on:click={handleOpen}>
@@ -103,7 +107,7 @@
 		<div class="title-container">
 			<span class="title-desktop">
 				<h1>T</h1>
-				<p class="text-3xl">&</p>
+				<p class="text-2xl">&</p>
 				<h1>C</h1>
 			</span>
 		</div>
@@ -133,7 +137,7 @@
 		@apply flex-1 px-2 mx-2;
 	}
 	.title-mobile {
-		@apply text-lg font-bold;
+		@apply text-xl font-bold flex justify-center items-center tracking-wider;
 	}
 	.title-desktop {
 		@apply text-7xl font-bold flex justify-center items-center tracking-wider;

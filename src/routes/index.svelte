@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>HOME | T&C</title>
+	<title>Home | T&C</title>
 </svelte:head>
 
 <section class="home">
@@ -33,16 +33,6 @@
 	</div>
 
 	<div class="spacer" />
-	<p class="text-xs font-medium mx-4 text-center">
-		Salt Lake City, Utah - Husband + Wife - Wedding Photographers/Videographers
-	</p>
-	<div class="social-icons">
-		<div class="social-icon" />
-		<div class="social-icon" />
-		<div class="social-icon" />
-		<div class="social-icon" />
-		<div class="social-icon" />
-	</div>
 </section>
 
 <style lang="postcss">
@@ -61,11 +51,5 @@
 	}
 	.spacer {
 		@apply divider w-64 sm:w-96 md:w-full max-w-2xl;
-	}
-	.social-icons {
-		@apply flex w-full justify-center items-center space-x-2 pb-10;
-	}
-	.social-icon {
-		@apply h-8 w-8 rounded-full bg-black cursor-pointer;
 	}
 </style>
