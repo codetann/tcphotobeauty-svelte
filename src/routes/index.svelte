@@ -50,6 +50,6 @@
 		@apply lg:w-72 lg:h-72 md:w-64 md:h-64 w-full h-60 bg-red-600;
 	}
 	.spacer {
-		@apply divider w-64 sm:w-96 md:w-full max-w-2xl;
+		@apply h-0.5 bg-opacity-10 bg-black w-64 sm:w-96 md:w-full max-w-2xl;
 	}
 </style>

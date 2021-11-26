@@ -4,8 +4,8 @@
 	import '../app.postcss';
 </script>
 
-<Navigation />
 <main class="relative flex flex-col w-screen max-w-full items-center">
+	<Navigation />
 	<slot />
 	<Footer />
 </main>

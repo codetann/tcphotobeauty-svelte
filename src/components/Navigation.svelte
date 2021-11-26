@@ -128,7 +128,7 @@
 
 <style lang="postcss">
 	.mobile {
-		@apply navbar mb-2 bg-white text-base-content relative;
+		@apply navbar mb-2 bg-white text-base-content relative flex justify-between w-full;
 	}
 	.desktop {
 		@apply navbar my-4 flex flex-col space-y-6;
