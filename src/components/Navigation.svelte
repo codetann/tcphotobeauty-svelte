@@ -51,7 +51,7 @@
 		<div class="title-container">
 			<span class="title-mobile">
 				<h1 class="text-3xl">T</h1>
-				<p class="text-sm">&</p>
+				<p class="text-xs mx-1">&</p>
 				<h1 class="text-3xl">C</h1></span
 			>
 		</div>
@@ -96,7 +96,24 @@
 			class:mobile-drawer={isOpen}
 			class:hide-mobile-drawer={!isOpen}
 		>
-			<button on:click={handleOpen}>Close</button>
+			<ul class="w-full space-y-6 flex flex-col justify-center items-center">
+				{#each links as link}
+					<a
+						href={link.path}
+						class:active={route === link.path}
+						class:not-active={route !== link.path}
+						on:click={() => {
+							handleOpen();
+							handleRoute(link.path);
+						}}
+					>
+						{link.title}
+						<!-- <a href={link.path} class="text-2xl">
+							{link.title}
+						</a> -->
+					</a>
+				{/each}
+			</ul>
 		</div>
 	{/if}
 {/if}
@@ -107,7 +124,7 @@
 		<div class="title-container">
 			<span class="title-desktop">
 				<h1>T</h1>
-				<p class="text-2xl">&</p>
+				<p class="text-lg mx-1 ">&</p>
 				<h1>C</h1>
 			</span>
 		</div>
@@ -128,7 +145,7 @@
 
 <style lang="postcss">
 	.mobile {
-		@apply navbar mb-2 bg-white text-base-content relative flex justify-between w-full;
+		@apply navbar bg-white text-base-content relative flex justify-between w-full;
 	}
 	.desktop {
 		@apply navbar my-4 flex flex-col space-y-6;
@@ -140,7 +157,7 @@
 		@apply text-xl font-bold flex justify-center items-center tracking-wider;
 	}
 	.title-desktop {
-		@apply text-7xl font-bold flex justify-center items-center tracking-wider;
+		@apply text-7xl font-bold flex justify-center items-center tracking-wider my-4;
 	}
 	.button {
 		@apply btn btn-square btn-ghost;
@@ -152,12 +169,18 @@
 		@apply opacity-40 hover:opacity-100;
 	}
 	.mobile-drawer {
-		@apply w-screen h-screen z-10 fixed bg-white top-16 opacity-100 transition duration-75;
+		@apply w-screen h-screen z-10 flex flex-col justify-start pt-6 items-center fixed bg-white top-16 opacity-100 transition duration-75;
 	}
 	.hide-mobile-drawer {
 		@apply opacity-0;
 	}
 	.bold {
 		@apply opacity-100;
+	}
+	.active {
+		@apply text-center border w-full max-w-sm p-4 border-black border-opacity-40 bg-black bg-opacity-90 text-white;
+	}
+	.not-active {
+		@apply text-center border w-full max-w-sm p-4 border-black border-opacity-40;
 	}
 </style>
