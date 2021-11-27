@@ -6,11 +6,15 @@
 	<p class="uppercase">Utah</p>
 </div>
 <div class="social-icons">
-	<div class="social-icon" />
-	<div class="social-icon" />
-	<div class="social-icon" />
-	<div class="social-icon" />
-	<div class="social-icon" />
+	<div class="social-icon">
+		<i class="fab fa-instagram text-white" />
+	</div>
+	<div class="social-icon">
+		<i class="far fa-envelope text-white" />
+	</div>
+	<div class="social-icon">
+		<i class="fab fa-facebook-square text-white" />
+	</div>
 </div>
 
 <style lang="postcss">
@@ -21,6 +25,6 @@
 		@apply flex w-full justify-center items-center space-x-2 pb-10;
 	}
 	.social-icon {
-		@apply h-8 w-8 rounded-full bg-black cursor-pointer;
+		@apply h-10 w-10 rounded-full bg-black cursor-pointer flex justify-center items-center;
 	}
 </style>
