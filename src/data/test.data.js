@@ -31,6 +31,10 @@ export const CLIENTS = {
 		{
 			url: 'https://images.unsplash.com/photo-1595717078923-128d397de19f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
 			text: 'SALT FLATS | ENGAGEMENTS'
+		},
+		{
+			url: 'https://images.unsplash.com/photo-1598586700390-7172442db3c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+			text: 'BOUNTIFUL | WEDDING'
 		}
 	],
 	VIDEO: [

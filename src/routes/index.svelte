@@ -10,7 +10,7 @@
 	<!-- svelte-ignore a11y-img-redundant-alt -->
 	<img
 		class="image"
-		src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1469&q=80"
+		src="https://images.unsplash.com/photo-1597861405049-0b011428568f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
 		alt="home-photo"
 	/>
 
@@ -21,11 +21,11 @@
 	<!-- <div class="spacer" /> -->
 	<div class="recent-work">
 		<PhotoTile
-			url={'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'}
+			url={'https://images.unsplash.com/photo-1598586700390-7172442db3c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60'}
 			text="LEHI UTAH | WEDDING"
 		/>
 		<PhotoTile
-			url="https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdlZGRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+			url="https://images.unsplash.com/photo-1551890946-3e5446d3a71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
 			text="NEBRASKA | ENGAGEMENT SHOOT"
 		/>
 		<PhotoTile
@@ -44,7 +44,7 @@
 		@apply flex flex-col items-center space-y-6 relative;
 	}
 	.image {
-		@apply max-w-5xl w-full px-4;
+		@apply max-w-5xl w-full px-2;
 	}
 	.recent-work {
 		/* @apply flex flex-col md:flex-row md:space-x-6 max-w-5xl w-full md:space-y-0 justify-between px-4; */

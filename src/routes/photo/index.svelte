@@ -44,10 +44,10 @@
 				<div class="package">
 					<span class="package-header">
 						<h1>{p.title}</h1>
-						<p>●</p>
+
 						<h2>{p.price}</h2>
 					</span>
-					<ul class="package-services border-pr">
+					<ul class="package-services text-sm">
 						{#each p.services as s}
 							<li class="my-2">{s}</li>
 						{/each}
@@ -55,9 +55,11 @@
 				</div>
 			{/each}
 		</div>
-		<p class="my-2">A La Carte</p>
-		<div class="w-full bg-black bg-opacity-90 min-h-16 flex justify-center items-center h-56 mb-12">
-			<ul class="text-white text-center">
+		<p class="mb-2 mt-4">A La Carte</p>
+		<div
+			class="w-full max-w-5xl bg-black bg-opacity-90 min-h-16 flex justify-center items-center h-56 mb-12"
+		>
+			<ul class="text-white text-center text-sm">
 				<li class="m-4">Wedding 4 hours | $600</li>
 				<li class="m-4">Wedding 8 hours | $800</li>
 				<li class="m-4">Bridals | $400</li>
@@ -73,7 +75,7 @@
 		min-width: 250px;
 	}
 	.pricing-section {
-		@apply flex flex-col justify-start items-center mt-10 px-4 w-full;
+		@apply flex flex-col justify-start items-center mt-10 px-2 w-full;
 	}
 	.packages {
 		@apply w-full flex flex-col sm:flex-row max-w-5xl py-4 justify-center space-x-0 space-y-3 sm:space-x-4 sm:space-y-0;
@@ -85,13 +87,13 @@
 		@apply flex w-full justify-center items-center mb-2 space-x-2;
 	}
 	.package-header h1 {
-		@apply text-2xl font-black;
+		@apply text-lg font-black;
 	}
 	.package-header p {
 		@apply text-xs;
 	}
 	.package-header h2 {
-		@apply text-xl opacity-60 font-light;
+		@apply text-lg opacity-60 font-light;
 	}
 	.package-services {
 		height: 13rem;

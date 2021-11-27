@@ -59,7 +59,7 @@
 						<h1>{p.title}</h1>
 						<h2 class="my-1">{p.price}</h2>
 					</span>
-					<ul class="package-services">
+					<ul class="package-services text-sm">
 						{#each p.services as s, i}
 							<li class="my-2">{s}</li>
 						{/each}
@@ -69,7 +69,7 @@
 		</div>
 		<p class="mb-2 mt-4">A La Carte</p>
 		<div class="w-full bg-black bg-opacity-90 min-h-16 flex justify-center items-center h-56 mb-12">
-			<ul class="text-white text-center">
+			<ul class="text-white text-center text-sm">
 				<li class="m-4">First Look | $500</li>
 				<li class="m-4">Wedding/Ceremony | $600</li>
 				<li class="m-4">Reception | $500</li>

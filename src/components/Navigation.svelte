@@ -96,7 +96,7 @@
 			class:mobile-drawer={isOpen}
 			class:hide-mobile-drawer={!isOpen}
 		>
-			<ul class="w-full space-y-6 flex flex-col justify-center items-center">
+			<ul class="w-full space-y-2 flex flex-col justify-center items-center">
 				{#each links as link}
 					<a
 						href={link.path}
