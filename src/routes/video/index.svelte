@@ -17,6 +17,19 @@
 		}
 	];
 
+	let TEST = [
+		{
+			src: `https://www.youtube.com/embed/yZejvMFuzX0?autoplay=1`,
+			title: 'test',
+			thumbnail: `https://images.unsplash.com/photo-1544078751-58fee2d8a03b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHdlZGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60`
+		},
+		{
+			src: `https://www.youtube.com/embed/yZejvMFuzX0`,
+			title: 'test',
+			thumbnail: `https://images.unsplash.com/flagged/photo-1620830102229-9db5c00d4afc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80`
+		}
+	];
+
 	let PACKAGES = [
 		{
 			title: 'Package 1',
@@ -31,6 +44,10 @@
 	];
 </script>
 
+<script>
+	import Video from '$components/Video.svelte';
+</script>
+
 <svelte:head>
 	<title>Video | T&C</title>
 </svelte:head>
@@ -38,8 +55,8 @@
 <!-- UPDATE TO FLEXBOX  https://tailwindgrids.com/#/ -->
 
 <section class="w-full max-w-5xl">
-	<div class="w-full flex flex-wrap justify-center items-center">
-		{#each CLIENTS as client}
+	<div class="w-full flex flex-wrap justify-center items-center space-x-4">
+		<!-- {#each CLIENTS as client}
 			<div class="flex flex-col justify-center items-center flex-wrap mb-10 ">
 				<div class="w-full px-2">
 					<div class="h-full w-full">
@@ -60,6 +77,9 @@
 					</div>
 				</div>
 			</div>
+		{/each} -->
+		{#each TEST as test}
+			<Video src={test.src} thumbnail={test.thumbnail} title={test.title} />
 		{/each}
 	</div>
 
