@@ -15,8 +15,11 @@
 	/>
 
 	<div class="spacer" />
+	<div class="line" />
+	<div class="spacer" />
 
 	<h3 class="text-sm">RECENT WORK</h3>
+	<div class="spacer" />
 	<div class="recent-work">
 		<PhotoTile
 			url={'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'}
@@ -38,7 +41,7 @@
 <style lang="postcss">
 	.home {
 		max-width: 100vw;
-		@apply flex flex-col items-center space-y-12 relative;
+		@apply flex flex-col items-center space-y-6 relative;
 	}
 	.image {
 		@apply px-5 max-w-5xl w-full;
@@ -49,7 +52,7 @@
 	.recent-img {
 		@apply lg:w-72 lg:h-72 md:w-64 md:h-64 w-full h-60 bg-red-600;
 	}
-	.spacer {
+	.space {
 		@apply h-0.5 bg-opacity-10 bg-black w-64 sm:w-96 md:w-full max-w-2xl;
 	}
 </style>
