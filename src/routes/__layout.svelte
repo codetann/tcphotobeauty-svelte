@@ -4,7 +4,7 @@
 	import '../app.postcss';
 </script>
 
-<main class="relative flex flex-col w-screen max-w-full items-center">
+<main class="relative flex flex-col w-screen max-w-full items-center overflow-x-hidden">
 	<Navigation />
 	<slot />
 	<Footer />

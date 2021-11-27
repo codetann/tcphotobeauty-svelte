@@ -1,44 +1,31 @@
 <script context="module">
-	let CLIENTS = [
-		{
-			url: `https://www.youtube.com/embed/nW2k7kQGRYI`,
-			client: `Taylor & Scott`,
-			service: `First Look`
-		},
-		{
-			url: `https://www.youtube.com/embed/BEutqfWpFD4`,
-			client: `Cory & Bethany`,
-			service: 'Wedding Day'
-		},
-		{
-			url: `https://www.youtube.com/embed/yZejvMFuzX0`,
-			client: `Brad & Maddie`,
-			service: `Wedding Day`
-		}
-	];
-
-	let TEST = [
-		{
-			src: `https://www.youtube.com/embed/yZejvMFuzX0?autoplay=1`,
-			title: 'test',
-			thumbnail: `https://images.unsplash.com/photo-1544078751-58fee2d8a03b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHdlZGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60`
-		},
-		{
-			src: `https://www.youtube.com/embed/yZejvMFuzX0`,
-			title: 'test',
-			thumbnail: `https://images.unsplash.com/flagged/photo-1620830102229-9db5c00d4afc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80`
-		}
-	];
+	// let CLIENTS = [
+	// 	{
+	// 		url: `https://www.youtube.com/embed/nW2k7kQGRYI`,
+	// 		client: `Taylor & Scott`,
+	// 		service: `First Look`
+	// 	},
+	// 	{
+	// 		url: `https://www.youtube.com/embed/BEutqfWpFD4`,
+	// 		client: `Cory & Bethany`,
+	// 		service: 'Wedding Day'
+	// 	},
+	// 	{
+	// 		url: `https://www.youtube.com/embed/yZejvMFuzX0`,
+	// 		client: `Brad & Maddie`,
+	// 		service: `Wedding Day`
+	// 	}
+	// ];
 
 	let PACKAGES = [
 		{
 			title: 'Package 1',
 			price: '$1000',
-			services: ['First Look', 'Wedding Day/Ceremony']
+			services: ['First Look', 'Wedding Day/Ceremony', ' ']
 		},
 		{
 			title: 'Package 2',
-			price: '$1300',
+			price: '$1400',
 			services: ['First Look', 'Wedding Day/Ceremony', 'Reception']
 		}
 	];
@@ -46,84 +33,49 @@
 
 <script>
 	import Video from '$components/Video.svelte';
+	import { CLIENTS } from '../../data/test.data';
 </script>
 
 <svelte:head>
 	<title>Video | T&C</title>
 </svelte:head>
 
-<!-- UPDATE TO FLEXBOX  https://tailwindgrids.com/#/ -->
-
 <section class="w-full max-w-5xl">
-	<div class="w-full flex flex-wrap justify-center items-center space-x-4">
-		<!-- {#each CLIENTS as client}
-			<div class="flex flex-col justify-center items-center flex-wrap mb-10 ">
-				<div class="w-full px-2">
-					<div class="h-full w-full">
-						<iframe
-							class="w-full h-56"
-							src={client.url}
-							frameborder="0"
-							title={client.client}
-							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen
-						/>
-					</div>
-				</div>
-				<div class="w-full px-2">
-					<div class="h-full">
-						<h2 class="text-2xl font-bold">{client.client}</h2>
-						<p class="text-xl">{client.service}</p>
-					</div>
-				</div>
-			</div>
-		{/each} -->
-		{#each TEST as test}
-			<Video src={test.src} thumbnail={test.thumbnail} title={test.title} />
+	<div class="w-full flex flex-wrap justify-center items-center ">
+		<!-- clients -->
+		{#each CLIENTS.VIDEO as V}
+			<Video src={V.src} thumbnail={V.thumbnail} title={V.title} />
 		{/each}
 	</div>
-
-	<!-- <iframe
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/yZejvMFuzX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		width="560"
-		height="315"
-		src="https://www.youtube.com/embed/nW2k7kQGRYI"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen
-	/>
-
-	<iframe
-		width="560"
-		height="315"
-		src="https://www.youtube.com/embed/BEutqfWpFD4"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen
-	/> -->
-
+	<!-- packages -->
 	<div class="pricing-section">
 		<div class="line" />
-		<p class="text-sm my-10">PRICING</p>
+		<p class="text-sm mt-10 pb-4">PRICING</p>
 		<div class="packages">
 			<!-- loop over packages and display them-->
 			{#each PACKAGES as p}
 				<div class="package">
 					<span class="package-header">
 						<h1>{p.title}</h1>
-						<p>●</p>
-						<h2>{p.price}</h2>
+						<h2 class="my-1">{p.price}</h2>
 					</span>
 					<ul class="package-services">
-						{#each p.services as s}
-							<li>{s}</li>
+						{#each p.services as s, i}
+							<li class="my-2">{s}</li>
 						{/each}
 					</ul>
 				</div>
 			{/each}
 		</div>
+		<p class="mb-2 mt-4">A La Carte</p>
+		<div class="w-full bg-black bg-opacity-90 min-h-16 flex justify-center items-center h-56 mb-12">
+			<ul class="text-white text-center">
+				<li class="m-4">First Look | $500</li>
+				<li class="m-4">Wedding/Ceremony | $600</li>
+				<li class="m-4">Reception | $500</li>
+			</ul>
+		</div>
+		<div class="line" />
 	</div>
 </section>
 
@@ -132,28 +84,28 @@
 		min-width: 300px;
 	}
 	.pricing-section {
-		@apply flex flex-col justify-start items-center mt-10 mx-6;
+		@apply flex flex-col justify-start items-center mt-10 mx-4;
 	}
 	.packages {
-		@apply w-full flex flex-col sm:flex-row max-w-5xl py-8 mb-10 justify-center space-x-0 space-y-3 sm:space-x-4 sm:space-y-0;
+		@apply w-full flex flex-col sm:flex-row max-w-5xl py-4 justify-center space-x-0 space-y-3 sm:space-x-4 sm:space-y-0;
 	}
 	.package {
 		@apply w-full mb-6 sm:my-0;
 	}
 	.package-header {
-		@apply flex w-full justify-center items-center mb-10 space-x-2;
+		@apply flex w-full justify-center items-center mb-2 space-x-2;
 	}
 	.package-header h1 {
-		@apply text-3xl font-black text-center;
+		@apply text-lg font-black;
 	}
 	.package-header p {
-		@apply text-sm;
+		@apply text-xs;
 	}
 	.package-header h2 {
-		@apply text-3xl opacity-60 font-light;
+		@apply text-lg opacity-60 font-light;
 	}
 	.package-services {
 		height: 13rem;
-		@apply text-center space-y-5 border border-gray-800 border-opacity-50 flex flex-col justify-center items-center;
+		@apply text-center border border-gray-800 border-opacity-50 flex flex-col justify-center items-center bg-black bg-opacity-90 text-white;
 	}
 </style>
