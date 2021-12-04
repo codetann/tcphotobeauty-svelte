@@ -1,10 +1,11 @@
 <script context="module">
 	import { createClient } from '$lib/prismic';
 	import * as prismicH from '@prismicio/helpers';
+	import { parsePackage } from './photo/data';
 
 	export async function load({ fetch }) {
 		const client = createClient(fetch);
-		const document = await client.getAllByType('photo-tile');
+		const document = await client.getAllByType('package');
 
 		return {
 			props: {
@@ -25,7 +26,7 @@
 </svelte:head>
 
 <section class="home">
-	<button on:click={() => console.log(document)}>LOG</button>
+	<button on:click={() => console.log(parsePackage(document))}>LOG</button>
 	<!-- svelte-ignore a11y-img-redundant-alt -->
 	<img
 		class="image"
@@ -71,8 +72,5 @@
 	}
 	.recent-img {
 		@apply lg:w-72 lg:h-72 md:w-64 md:h-64 w-full h-60 bg-red-600;
-	}
-	.space {
-		@apply h-0.5 bg-opacity-10 bg-black w-64 sm:w-96 md:w-full max-w-2xl;
 	}
 </style>
