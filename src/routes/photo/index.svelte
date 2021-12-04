@@ -16,6 +16,7 @@
 </script>
 
 <script>
+  import json from './config.json'
 	import PhotoTile from '$components/PhotoTile.svelte';
 	import { CLIENTS } from '../../data/test.data';
 </script>
@@ -60,10 +61,13 @@
 			class="w-full max-w-5xl bg-black bg-opacity-90 min-h-16 flex justify-center items-center h-56 mb-12"
 		>
 			<ul class="text-white text-center text-sm">
-				<li class="m-4">Wedding 4 hours | $600</li>
+        {#each json.services as s}
+          <li class='m-4'>{s.description} | ${s.price}</li>
+        {/each}
+				<!-- <li class="m-4">Wedding 4 hours | $600</li>
 				<li class="m-4">Wedding 8 hours | $800</li>
 				<li class="m-4">Bridals | $400</li>
-				<li class="m-4">Engagements | $400</li>
+				<li class="m-4">Engagements | $400</li> -->
 			</ul>
 		</div>
 	</div>

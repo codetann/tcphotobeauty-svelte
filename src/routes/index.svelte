@@ -1,5 +1,23 @@
+<script context="module">
+	import { createClient } from '$lib/prismic';
+	import * as prismicH from '@prismicio/helpers';
+
+	export async function load({ fetch }) {
+		const client = createClient(fetch);
+		const document = await client.getAllByType('photo-tile');
+
+		return {
+			props: {
+				document
+			}
+		};
+	}
+</script>
+
 <script>
 	import PhotoTile from '$components/PhotoTile.svelte';
+
+	export let document;
 </script>
 
 <svelte:head>
@@ -7,6 +25,7 @@
 </svelte:head>
 
 <section class="home">
+	<button on:click={() => console.log(document)}>LOG</button>
 	<!-- svelte-ignore a11y-img-redundant-alt -->
 	<img
 		class="image"

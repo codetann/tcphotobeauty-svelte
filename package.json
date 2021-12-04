@@ -9,6 +9,8 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@prismicio/client": "^6.0.0-beta.4",
+		"@prismicio/helpers": "^2.0.0-beta.6",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.3.4",
 		"cssnano": "^5.0.8",
@@ -25,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^1.16.2"
+		"daisyui": "^1.16.2",
+		"dotenv": "^10.0.0"
 	}
 }
