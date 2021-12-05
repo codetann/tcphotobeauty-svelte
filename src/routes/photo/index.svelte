@@ -1,25 +1,23 @@
 <script context="module">
-	import { createClient } from '$lib/prismic';
-	import { parsePackage } from '$lib/utils';
+	// import { createClient } from '$lib/prismic';
+	// import { parsePackage } from '$lib/utils';
 
-	export async function load({ fetch }) {
-		const prismic = createClient();
-		const packages = await prismic.getAllByType('package');
-		return {
-			props: {
-				packages
-			}
-		};
-	}
+	// export async function load({ fetch }) {
+	// 	const prismic = createClient();
+	// 	const packages = await prismic.getAllByType('photo-package');
+	// 	return {
+	// 		props: {
+	// 			packages
+	// 		}
+	// 	};
+	// }
 </script>
 
 <script>
-	import json from './config.json';
+	import PRICING from './config.json';
 	import PhotoTile from '$components/PhotoTile.svelte';
 	import Package from '$components/Package.svelte';
 	import { CLIENTS } from '../../data/test.data';
-
-	export let packages;
 </script>
 
 <svelte:head>
@@ -41,8 +39,18 @@
 		<div class="line" />
 		<p class="text-sm mt-10 mb-4">PRICING</p>
 		<div class="packages">
-			{#each parsePackage(packages) as p}
-				<Package title={p.title} price={p.price} services={p.services} />
+			{#each PRICING.packages as p}
+				<div class="package">
+					<span class="package-header">
+						<h1>{p.title}</h1>
+						<h2>{p.price}</h2>
+					</span>
+					<ul class="package-services text-sm">
+						{#each p.services as s}
+							<li class="my-2">{s}</li>
+						{/each}
+					</ul>
+				</div>
 			{/each}
 		</div>
 		<p class="mb-2 mt-4">A La Carte</p>
@@ -50,13 +58,9 @@
 			class="w-full max-w-5xl bg-black bg-opacity-90 min-h-16 flex justify-center items-center h-56 mb-12"
 		>
 			<ul class="text-white text-center text-sm">
-				{#each json.services as s}
-					<li class="m-4">{s.description} | ${s.price}</li>
+				{#each PRICING.carte as s}
+					<li class="m-4">{s.title} | ${s.price}</li>
 				{/each}
-				<!-- <li class="m-4">Wedding 4 hours | $600</li>
-				<li class="m-4">Wedding 8 hours | $800</li>
-				<li class="m-4">Bridals | $400</li>
-				<li class="m-4">Engagements | $400</li> -->
 			</ul>
 		</div>
 	</div>
@@ -71,7 +75,7 @@
 		@apply flex flex-col justify-start items-center mt-10 px-2 w-full;
 	}
 	.packages {
-		@apply w-full flex flex-col sm:flex-row max-w-5xl py-4 justify-center space-x-0 space-y-3 sm:space-x-4 sm:space-y-0;
+		@apply w-full flex flex-col sm:flex-row max-w-5xl py-4 justify-center space-x-0 space-y-3 sm:space-x-2 sm:space-y-0;
 	}
 	.package {
 		@apply w-full mb-6 sm:my-0;

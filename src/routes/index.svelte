@@ -1,18 +1,18 @@
 <script context="module">
-	import { createClient } from '$lib/prismic';
-	import * as prismicH from '@prismicio/helpers';
-	import { parsePackage } from './photo/data';
+	// import { createClient } from '$lib/prismic';
+	// import * as prismicH from '@prismicio/helpers';
+	// import { parsePackage } from './photo/data';
 
-	export async function load({ fetch }) {
-		const client = createClient(fetch);
-		const document = await client.getAllByType('package');
+	// export async function load({ fetch }) {
+	// 	const client = createClient(fetch);
+	// 	const document = await client.getAllByType('package');
 
-		return {
-			props: {
-				document
-			}
-		};
-	}
+	// 	return {
+	// 		props: {
+	// 			document
+	// 		}
+	// 	};
+	// }
 </script>
 
 <script>
@@ -26,7 +26,6 @@
 </svelte:head>
 
 <section class="home">
-	<button on:click={() => console.log(parsePackage(document))}>LOG</button>
 	<!-- svelte-ignore a11y-img-redundant-alt -->
 	<img
 		class="image"
