@@ -1,0 +1,28 @@
+{
+	"packages": [
+		{
+			"title": "Package One",
+			"price": 1500,
+			"services": ["First Look", "Wedding/Ceremony"]
+		},
+		{
+			"title": "Package Two",
+			"price": 2000,
+			"services": ["First Look", "Wedding Day/Ceremony", "Reception"]
+		}
+	],
+	"carte": [
+		{
+			"title": "First Look",
+			"price": 600
+		},
+		{
+			"title": "Wedding/Ceremony",
+			"price": 1000
+		},
+		{
+			"title": "Reception",
+			"price": 600
+		}
+	]
+}
