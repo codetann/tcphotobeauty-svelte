@@ -1,11 +1,14 @@
 <script>
+	import Spacer from './Spacer.svelte';
 	export let packages;
 	export let carte;
 </script>
 
 <div class="pricing-section">
 	<div class="line" />
-	<p class="text-sm mt-10 mb-4">PRICING</p>
+	<Spacer />
+	<p class="text-sm">PRICING</p>
+	<Spacer />
 	<div class="packages">
 		{#each packages as p}
 			<div class="package">
@@ -35,10 +38,10 @@
 
 <style lang="postcss">
 	.pricing-section {
-		@apply flex flex-col justify-start items-center mt-10 px-2 w-full;
+		@apply flex flex-col justify-start items-center px-2 w-full;
 	}
 	.packages {
-		@apply w-full flex flex-col sm:flex-row max-w-5xl py-4 justify-center space-x-0 space-y-3 sm:space-x-2 sm:space-y-0;
+		@apply w-full flex flex-col sm:flex-row max-w-5xl  justify-center space-x-0 space-y-3 sm:space-x-2 sm:space-y-0;
 	}
 	.package {
 		@apply w-full mb-6 sm:my-0;

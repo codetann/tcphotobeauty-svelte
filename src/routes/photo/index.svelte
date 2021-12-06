@@ -15,6 +15,9 @@
 <script>
 	import PhotoTile from '$components/PhotoTile.svelte';
 	import Pricing from '$components/Pricing.svelte';
+	import Clients from '$components/Clients.svelte';
+	import Divider from '$components/Divider.svelte';
+	import Spacer from '$components/Spacer.svelte';
 	import Page from '$components/Page.svelte';
 	import pricing from './config.json';
 	export let clients;
@@ -24,20 +27,13 @@
 	<title>Photo | T&C</title>
 </svelte:head>
 
-<button on:click={() => console.log(parseClients(clients))}>LOG</button>
-
 <Page>
-	<div class="clients">
+	<Clients>
 		{#each parseClients(clients) as P}
 			<PhotoTile url={P.thumbnail} text={P.title} />
 		{/each}
-	</div>
+	</Clients>
+	<Spacer />
 	<Pricing packages={pricing.packages} carte={pricing.carte} />
-	<div class="line" />
+	<Divider />
 </Page>
-
-<style lang="postcss">
-	.clients {
-		@apply flex flex-wrap justify-center items-center mb-4;
-	}
-</style>
