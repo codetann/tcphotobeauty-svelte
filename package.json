@@ -27,7 +27,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@notionhq/client": "^0.4.9",
 		"daisyui": "^1.16.2",
-		"dotenv": "^10.0.0"
+		"dotenv": "^10.0.0",
+		"uuid": "^8.3.2"
 	}
 }

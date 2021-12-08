@@ -1,0 +1,32 @@
+{
+	"packages": [
+		{
+			"title": "Package One",
+			"price": 1200,
+			"services": ["Bridals", "Engagements", "4 Hour Wedding Day Coverage"]
+		},
+		{
+			"title": "Package Two",
+			"price": 1400,
+			"services": ["Bridals", "Engagements", "8 Hour Wedding Day Coverage"]
+		}
+	],
+	"carte": [
+		{
+			"title": "Bridals",
+			"price": 300
+		},
+		{
+			"title": "Engagements",
+			"price": 300
+		},
+		{
+			"title": "4 Hour Coverage",
+			"price": 700
+		},
+		{
+			"title": "8 Hour Coverage",
+			"price": 900
+		}
+	]
+}

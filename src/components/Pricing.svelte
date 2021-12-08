@@ -1,7 +1,9 @@
 <script>
 	import Spacer from './Spacer.svelte';
-	export let packages;
+
 	export let carte;
+	export let packages;
+  export let isBeautyPricing = false;
 </script>
 
 <div class="pricing-section">
@@ -10,6 +12,7 @@
 	<p class="text-sm">PRICING</p>
 	<Spacer />
 	<div class="packages">
+    {#if !isBeautyPricing}
 		{#each packages as p}
 			<div class="package">
 				<span class="package-header">
@@ -23,6 +26,7 @@
 				</ul>
 			</div>
 		{/each}
+    {/if}
 	</div>
 	<p class="mb-2 mt-4">A La Carte</p>
 	<div
@@ -38,7 +42,7 @@
 
 <style lang="postcss">
 	.pricing-section {
-		@apply flex flex-col justify-start items-center px-2 w-full;
+		@apply flex flex-col justify-start items-center px-2 w-full max-w-5xl;
 	}
 	.packages {
 		@apply w-full flex flex-col sm:flex-row max-w-5xl  justify-center space-x-0 space-y-3 sm:space-x-2 sm:space-y-0;

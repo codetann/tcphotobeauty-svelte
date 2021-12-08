@@ -1,6 +1,8 @@
-<script></script>
+<script>
+	import Page from '$components/Page.svelte';
+</script>
 
-<section class=" flex flex-col justify-center items-center max-w-xl space-y-4 mt-10 w-full px-2">
+<Page>
 	<span class="flex space-y-4 sm:space-y-0 sm:space-x-2 flex-col sm:flex-row w-full ">
 		<span class="flex flex-col w-full">
 			<label for="first">First name</label>
@@ -21,7 +23,7 @@
 		<label for="about">Tell us about yourselves</label>
 		<textarea id="about" class=" border-2 border-black border-opacity-90 h-40" type="text" />
 	</span>
-</section>
+</Page>
 
 <style lang="postcss">
 	input {

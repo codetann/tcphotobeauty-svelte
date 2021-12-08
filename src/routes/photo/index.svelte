@@ -13,13 +13,14 @@
 </script>
 
 <script>
-	import PhotoTile from '$components/PhotoTile.svelte';
-	import Pricing from '$components/Pricing.svelte';
+	import pricing from './config.json';
+	import Page from '$components/Page.svelte';
+	import Spacer from '$components/Spacer.svelte';
+  import Pricing from '$components/Pricing.svelte';
 	import Clients from '$components/Clients.svelte';
 	import Divider from '$components/Divider.svelte';
-	import Spacer from '$components/Spacer.svelte';
-	import Page from '$components/Page.svelte';
-	import pricing from './config.json';
+	import PhotoTile from '$components/PhotoTile.svelte';
+
 	export let clients;
 </script>
 
