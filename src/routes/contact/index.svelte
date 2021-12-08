@@ -1,6 +1,6 @@
 <script>
 	import Page from '$components/Page.svelte';
-	import { submitForm } from '$lib/notion';
+	// import { submitForm } from '$lib/notion';
 
 	let first = null;
 	let last = null;
