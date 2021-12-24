@@ -7,23 +7,30 @@
 	import { onMount } from 'svelte';
 
 	let uid = $page.params.slug;
-	let gallery = [];
+	let client = false;
 
 	onMount(() => {
 		const clients = localstorage.get('clients');
 		if (clients) {
-			const client = clients.filter((client) => client.uid === uid);
-			gallery = client[0].gallery;
+			const foundClient = clients.filter((client) => client.uid === uid);
+			client = foundClient[0];
 		}
 	});
 </script>
 
 <Page>
+	<p class="page__title">{client.title}</p>
 	<Clients>
-		{#if gallery}
-			{#each gallery as G}
+		{#if client}
+			{#each client.gallery as G}
 				<PhotoTile url={G.url} />
 			{/each}
 		{/if}
 	</Clients>
 </Page>
+
+<style lang="postcss">
+	.page__title {
+		@apply mb-16 mt-10 text-sm;
+	}
+</style>
