@@ -4,9 +4,9 @@
 	export let uid;
 </script>
 
-<div style="--url: url({url})" class="photo-tile">
-	{text}
-</div>
+<a href={`/photo/${uid}`} style="--url: url({url})" class="photo-tile">
+	{text || ''}
+</a>
 
 <style lang="postcss">
 	.photo-tile {
