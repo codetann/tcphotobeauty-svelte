@@ -13,13 +13,13 @@
 </script>
 
 <script>
-	import pricing from './config.json';
-	import Page from '$components/Page.svelte';
-	import Spacer from '$components/Spacer.svelte';
-  import Pricing from '$components/Pricing.svelte';
-	import Clients from '$components/Clients.svelte';
-	import Divider from '$components/Divider.svelte';
 	import PhotoTile from '$components/PhotoTile.svelte';
+	import Clients from '$components/Clients.svelte';
+	import Pricing from '$components/Pricing.svelte';
+	import Divider from '$components/Divider.svelte';
+	import Spacer from '$components/Spacer.svelte';
+	import Page from '$components/Page.svelte';
+	import pricing from './config.json';
 
 	export let clients;
 </script>
@@ -31,7 +31,7 @@
 <Page>
 	<Clients>
 		{#each parseClients(clients) as P}
-			<PhotoTile url={P.thumbnail} text={P.title} />
+			<PhotoTile uid={P.uid} url={P.thumbnail} text={P.title} />
 		{/each}
 	</Clients>
 	<Spacer />
