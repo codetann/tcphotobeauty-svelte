@@ -23,7 +23,7 @@
 	<Clients>
 		{#if client}
 			{#each client.gallery as G}
-				<PhotoTile url={G.url} />
+				<PhotoTile isGallery url={G.url} />
 			{/each}
 		{/if}
 	</Clients>

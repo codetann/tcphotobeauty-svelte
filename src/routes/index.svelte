@@ -1,3 +1,8 @@
+<!--
+  *
+  FIX: header image
+  *
+-->
 <script context="module">
 	// import { createClient } from '$lib/prismic';
 	// import * as prismicH from '@prismicio/helpers';
@@ -30,11 +35,9 @@
 
 <Page>
 	<!-- svelte-ignore a11y-img-redundant-alt -->
-	<img
-		class="image"
-		src="https://images.unsplash.com/photo-1597861405049-0b011428568f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
-		alt="home-photo"
-	/>
+	<div class="px-2 w-full">
+		<div class="image" />
+	</div>
 	<Spacer />
 	<Divider />
 	<Spacer />
@@ -60,7 +63,8 @@
 
 <style lang="postcss">
 	.image {
-		@apply max-w-5xl w-full px-2;
+		background-image: url('https://images.unsplash.com/photo-1597861405049-0b011428568f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60');
+		@apply max-w-5xl w-full h-96 md:h-96 bg-cover bg-center;
 	}
 	.recent-work {
 		/* @apply flex flex-col md:flex-row md:space-x-6 max-w-5xl w-full md:space-y-0 justify-between px-4; */
