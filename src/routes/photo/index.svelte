@@ -2,6 +2,7 @@
 	import { createClient } from '$lib/prismic';
 	import { parseClients } from '$lib/utils';
 	export async function load({ fetch }) {
+		console.log('fetching clients');
 		const prismic = createClient(fetch);
 		const clients = await prismic.getAllByType('client-photos');
 		return {
@@ -31,7 +32,12 @@
 <Page>
 	<Clients>
 		{#each parseClients(clients) as P}
-			<PhotoTile uid={P.uid} url={P.thumbnail} text={P.title} />
+			<a
+				href="https://drive.google.com/drive/folders/1vWzebewRqJtCAR1-RSHPlVU3dVajP-TR?usp=sharing"
+				target="_blank"
+			>
+				<PhotoTile uid={P.uid} url={P.thumbnail} text={P.title} />
+			</a>
 		{/each}
 	</Clients>
 	<Spacer />

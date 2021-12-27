@@ -2,7 +2,11 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<section class="page" in:fade={{ duration: 500, delay: 500 }} out:fade={{ duration: 500 }}>
+<!-- <section class="page" in:fade={{ duration: 500, delay: 500 }} out:fade={{ duration: 500 }}>
+	<slot />
+</section> -->
+
+<section class="page">
 	<slot />
 </section>
 

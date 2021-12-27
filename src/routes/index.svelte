@@ -35,7 +35,7 @@
 
 <Page>
 	<!-- svelte-ignore a11y-img-redundant-alt -->
-	<div class="px-2 w-full">
+	<div class="px-2 w-full flex justify-center">
 		<div class="image" />
 	</div>
 	<Spacer />
