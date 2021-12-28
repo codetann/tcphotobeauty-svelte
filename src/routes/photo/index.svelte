@@ -2,7 +2,6 @@
 	import { createClient } from '$lib/prismic';
 	import { parseClients } from '$lib/utils';
 	export async function load({ fetch }) {
-		console.log('fetching clients');
 		const prismic = createClient(fetch);
 		const clients = await prismic.getAllByType('client-photos');
 		return {
