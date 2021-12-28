@@ -3,10 +3,11 @@
 	export let uid;
 	export let text;
 	export let isGallery = false;
+	export let onClick = () => null;
 </script>
 
 {#if isGallery}
-	<div style="--url: url({url})" class="photo__tile--gallery">
+	<div style="--url: url({url})" class="photo__tile--gallery" on:click={onClick}>
 		{text || ''}
 	</div>
 {:else}

@@ -1,3 +1,31 @@
+// export function parseClients(clients) {
+// 	const getClients = (key) => JSON.parse(localStorage.getItem(key));
+// 	const setClients = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+
+// 	const cache = getClients('clients');
+
+// 	if (cache) return cache;
+
+// 	const clientList = clients.map((c) => {
+// 		const thumbnail = c.data['client-thumbnail'].url;
+// 		const title = c.data['client-title'][0].text;
+// 		const uid = c.uid;
+// 		const gallery = c.data['client-gallery'].map((g) => {
+// 			const client = g['client-gallery-photo'];
+// 			return {
+// 				url: client.url,
+// 				height: client.height,
+// 				width: client.width,
+// 				name: client.name
+// 			};
+// 		});
+// 		return { uid, title, thumbnail, gallery };
+// 	});
+
+// 	setClients('clients', clientList);
+// 	return clientList;
+// }
+
 export const localstorage = {
 	get: (key) => {
 		if (localStorage.getItem(key)) {
