@@ -48,7 +48,7 @@
 		@apply w-full flex flex-col sm:flex-row max-w-5xl  justify-center space-x-0 space-y-3 sm:space-x-2 sm:space-y-0;
 	}
 	.package {
-		@apply w-full mb-6 sm:my-0;
+		@apply w-full mb-0 sm:my-0;
 	}
 	.package-header {
 		@apply flex w-full justify-center items-center mb-2 space-x-2;

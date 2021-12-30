@@ -32,7 +32,16 @@
 </script>
 
 <Page>
-	<p class="page__title">{client.title}</p>
+	<div class="flex w-full justify-between max-w-4xl items-center px-4 sm:mx-0">
+		<a
+			class="btn bg-black rounded-none p-4 font-normal flex items-center justify-center page__title"
+			href="/photo"
+		>
+			<i class="fas fa-chevron-left mr-2" on:click={() => (index -= 1)} />
+			<p class="leading-none">BACK</p>
+		</a>
+		<p class="page__title leading-none">{client.title}</p>
+	</div>
 	<Clients>
 		{#if client}
 			{#each client.gallery as G, i}

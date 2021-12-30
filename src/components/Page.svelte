@@ -1,3 +1,7 @@
+<script>
+	import { fade } from 'svelte/transition';
+</script>
+
 <section class="page">
 	<slot />
 </section>

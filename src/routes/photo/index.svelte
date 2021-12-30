@@ -31,12 +31,7 @@
 <Page>
 	<Clients>
 		{#each parseClients(clients) as P}
-			<a
-				href="https://drive.google.com/drive/folders/1vWzebewRqJtCAR1-RSHPlVU3dVajP-TR?usp=sharing"
-				target="_blank"
-			>
-				<PhotoTile uid={P.uid} url={P.thumbnail} text={P.title} />
-			</a>
+			<PhotoTile uid={P.uid} url={P.thumbnail} text={P.title} />
 		{/each}
 	</Clients>
 	<Spacer />
