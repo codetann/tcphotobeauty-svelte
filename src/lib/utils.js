@@ -77,3 +77,12 @@ export const parseClients = (clients) => {
 	localstorage.set('clients', clientList);
 	return clientList;
 };
+
+export const parseBeauty = (clients) => {
+	const clientArray = clients.map((c) => {
+		const uid = c.uid;
+		const url = c.data['client-photo'].url;
+		return { uid, url };
+	});
+	return clientArray;
+};
