@@ -1,6 +1,6 @@
 <script>
 	export let url;
-	export let uid;
+	export let key;
 	export let text;
 	export let isGallery = false;
 	export let onClick = () => null;
@@ -11,7 +11,7 @@
 		{text || ''}
 	</div>
 {:else}
-	<a href={`/photo/${uid}`} style="--url: url({url})" class="photo__tile">
+	<a href={`/photo/${key}`} style="--url: url({url})" class="photo__tile">
 		{text || ''}
 	</a>
 {/if}

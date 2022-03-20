@@ -3,25 +3,29 @@
 	import Carousel from '$components/Carousel.svelte';
 	import Clients from '$components/Clients.svelte';
 	import Page from '$components/Page.svelte';
-	import { localstorage } from '$lib/utils';
+	// import { localstorage } from '$lib/utils';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import config from './config.json'
 
 	// state
-	let uid = $page.params.slug;
+	let key = $page.params.slug;
 	let client = false;
 	let isOpen = false;
 	let index = 0;
 
 	// filters through the clients array to find the client with the matching uid and sets the client variable
-	onMount(() => {
-		const clients = localstorage.get('clients');
+	// onMount(() => {
+	// 	const clients = localstorage.get('clients');
 
-		if (clients) {
-			const foundClient = clients.filter((client) => client.uid === uid);
-			client = foundClient[0];
-		}
-	});
+	// 	if (clients) {
+	// 		const foundClient = clients.filter((client) => client.uid === uid);
+	// 		client = foundClient[0];
+	// 	}
+	// });
+
+
+	const gallery = config.clients.find((c) => c.key === key);
 
 	// handles the click on the client tile
 	function handleClick(i) {
@@ -43,16 +47,16 @@
 		<p class="page__title leading-none">{client.title}</p>
 	</div>
 	<Clients>
-		{#if client}
-			{#each client.gallery as G, i}
+
+			{#each gallery as G, i}
 				<PhotoTile onClick={() => handleClick(i)} isGallery url={G.url} />
 			{/each}
-		{/if}
+
 	</Clients>
 </Page>
 
 {#if isOpen}
-	<Carousel {index} photos={client.gallery} onClick={handleClick} />
+	<Carousel {index} photos={gallery} onClick={handleClick} />
 {/if}
 
 <style lang="postcss">

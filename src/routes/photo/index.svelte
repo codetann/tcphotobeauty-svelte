@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
 	import { createClient } from '$lib/prismic';
 	import { parseClients } from '$lib/utils';
 	export async function load({ fetch }) {
@@ -10,7 +10,7 @@
 			}
 		};
 	}
-</script>
+</script> -->
 
 <script>
 	import PhotoTile from '$components/PhotoTile.svelte';
@@ -19,9 +19,7 @@
 	import Divider from '$components/Divider.svelte';
 	import Spacer from '$components/Spacer.svelte';
 	import Page from '$components/Page.svelte';
-	import pricing from './config.json';
-
-	export let clients;
+	import config from './config.json';
 </script>
 
 <svelte:head>
@@ -30,11 +28,11 @@
 
 <Page>
 	<Clients>
-		{#each parseClients(clients) as P}
-			<PhotoTile uid={P.uid} url={P.thumbnail} text={P.title} />
+		{#each config.clients as P}
+			<PhotoTile uid={P.key} url={P.thumbnail} text={P.title} />
 		{/each}
 	</Clients>
 	<Spacer />
-	<Pricing packages={pricing.packages} carte={pricing.carte} />
+	<Pricing packages={config.packages} carte={config.carte} />
 	<Divider />
 </Page>

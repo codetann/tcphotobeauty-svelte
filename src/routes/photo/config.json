@@ -28,5 +28,26 @@
 			"title": "8 Hour Coverage",
 			"price": 900
 		}
+	],
+	"clients": [
+		{
+			"key": 1,
+			"title": "SALT FLATS | ENGAGEMENTS",
+			"thumbnail": "https://res.cloudinary.com/dchbfnubk/image/upload/v1640635583/clients/selicia-collins-engagements/DSCF8080_azqgqy.jpg",
+			"photos": [
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635583/clients/selicia-collins-engagements/DSCF8080_azqgqy.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635583/clients/selicia-collins-engagements/DSCF7802_macqnq.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635582/clients/selicia-collins-engagements/DSCF7787_xji8b3.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635581/clients/selicia-collins-engagements/DSCF7653_wqpamf.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635581/clients/selicia-collins-engagements/DSCF7551_qc3mbn.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635581/clients/selicia-collins-engagements/DSCF7672_bkdfe4.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635581/clients/selicia-collins-engagements/DSCF7598_prqn3f.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635581/clients/selicia-collins-engagements/DSCF7434_jc2bla.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635579/clients/selicia-collins-engagements/DSCF7417_zweahq.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635577/clients/selicia-collins-engagements/DSCF7127_rnnzwa.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635577/clients/selicia-collins-engagements/DSCF6848_f3szyt.jpg",
+				"https://res.cloudinary.com/dchbfnubk/image/upload/v1640635577/clients/selicia-collins-engagements/DSCF7013_flzmrt.jpg"
+			]
+		}
 	]
 }
